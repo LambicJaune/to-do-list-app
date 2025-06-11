@@ -2,18 +2,17 @@
 function newItem(){
 
 //javascript
-//1. Adding a new item to the list of items: 
-   let li = document.createElement("li");
-   let inputValue = document.getElementById("input").value;
-   let text = document.createTextNode(inputValue);
-   li.appendChild(text);
+    //1. Adding a new item to the list of items: 
+    let li = $('<li></li>');
+    let inputValue = $('#input').val();
 
-   if (inputValue === '') {
-     alert("You must write something!");
-   } else {
-     let list = document.querySelector('#list');
-     list.appendChild(li);
-   }
+    if (inputValue === '') {
+        alert("You must write something!");
+    } else {
+        let list = $('#list');
+        li.append(inputValue);
+        $(list).append(li);
+    }
 
  //2. Crossing out an item from the list of items:
    function crossOut() {
